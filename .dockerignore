@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+.git/
+runs/
+new_data/
+dataset/
+*.zip

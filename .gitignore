@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+runs/
+dataset/
+outputs/*
+!outputs/.gitkeep
+*.zip
+.env
+
+# Datasets and training output must never be uploaded
+new_data/
+sig-detec_proj/
+raw_signatures/
+signature_people/

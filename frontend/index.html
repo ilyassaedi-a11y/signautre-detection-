@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOLO11 Object Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">YOLO11 Detector</div>
+    <span id="status" class="status">Checking server...</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Object Detection with YOLO11</h1>
+      <p>Upload an image or a video and the model will find the objects in it.</p>
+    </section>
+
+    <section class="panel">
+      <div class="tabs">
+        <button class="tab active" data-mode="image">Image</button>
+        <button class="tab" data-mode="video">Video</button>
+      </div>
+
+      <label id="dropzone" class="dropzone" for="fileInput">
+        <input type="file" id="fileInput" hidden>
+        <p id="dropText">Drag and drop an image here, or click to browse</p>
+        <small id="fileName"></small>
+      </label>
+
+      <div class="controls">
+        <div class="slider">
+          <label for="conf">Confidence threshold: <b id="confValue">0.15</b></label>
+          <input type="range" id="conf" min="0.05" max="0.9" step="0.05" value="0.15">
+        </div>
+        <button id="runBtn" class="primary" disabled>Detect</button>
+      </div>
+
+      <div id="loader" class="loader" hidden><span class="spinner"></span> Processing, please wait...</div>
+      <div id="error" class="error" hidden></div>
+    </section>
+
+    <section id="results" class="panel" hidden>
+      <h2>Results</h2>
+      <div id="stats" class="stats"></div>
+      <div id="media" class="media"></div>
+      <div id="tableWrap"></div>
+    </section>
+  </main>
+
+  <footer class="footer">Built with YOLO11, FastAPI and Roboflow</footer>
+  <script src="script.js"></script>
+</body>
+</html>
